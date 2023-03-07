@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+    <a href="{% url 'task-update' task.id%}"> Edit</a>
+</div>
+<h1>Task Details</h1>
+
+<hr>
+
+<h2>Task: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <spam style="font-size: 16px"> {{task.title}}</spam> </h2>
+{% if task.description %}
+    <h3>Details: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <spam style="font-size: 16px"> {{task.description}}</spam> </h3>
+{% else %}
+    <h3>Details: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <spam style="font-size: 16px"> None</spam> </h3>
+{% endif %}<br>
+{%endblock content%}
